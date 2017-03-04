@@ -1,0 +1,97 @@
+/*
+Theme Name: hashone-child
+Theme URI: dev.rda.ck.ua/
+Description: Child theme for the hashone
+Author: Max
+Author URI: http://example.com/about/
+Template: hashone
+Version: 0.1.0
+*/
+
+@import url('../hashone/style.css');
+
+
+
+.hs-featured-icon {
+    background: #EE3B24;
+}
+
+.menu-item-home a {
+    color: #444!important;
+}
+
+.menu-item-home > a:hover, .menu-item-home > a:hover {
+    color: #830e00 !important;
+}
+
+ .hs-featured-post-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ }
+
+ .hs-featured-post {
+  float: none;
+  margin: 1em;
+ }
+
+.hs-featured-post a {
+	display:block;
+	color: #000;
+	-webkit-transition: 0.5s;
+    -moz-transition:  0.5s;
+    -ms-transition: 0.5s;
+    -o-transition:  0.5s;
+    transition:  0.5s;
+}
+.hs-featured-post a:hover {
+	color: #EE3B24;
+ }
+
+.hs-featured-post a:hover h3{
+	text-decoration: underline;
+}
+
+.owl-carousel .owl-item {
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+
+/*-----Footer styles----*/
+.hs-site-content {
+	min-height: calc(100vh - 117px);
+}
+/*-----SEARCH FIELD-----*/
+
+
+.search-field {
+	height: 20px !important;
+	background: transparent;
+	margin: 5px 0;
+}
+
+.search-submit {
+	height: 28px !important;
+    line-height: 28px !important;
+    padding: 0 10px !important;
+}
+
+.bop-nav-search {
+	display: flex;
+    align-items: center;
+	justify-content: center;
+}
+
+@media screen and (min-width: 1181px) {
+
+	.hs-main-navigation ul {
+		display: flex;
+		align-items: center;
+	}
+    
+	.search-field {
+		color: white !important;
+	}
+}
+

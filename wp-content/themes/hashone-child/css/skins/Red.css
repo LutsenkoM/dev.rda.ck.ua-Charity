@@ -1,0 +1,81 @@
+#hs-masthead {
+    border-top: 2px solid #EE3B24;
+}
+
+@media screen and (max-width: 1180px){
+    .hs-toggle-menu span {
+        background: #EE3B24;
+        box-shadow: 0 10px 0px 0px #EE3B24, 0 -10px 0px 0px #EE3B24;
+    }
+}
+
+.hs-featured-icon {
+    background: #EE3B24;
+}
+
+.hs-featured-icon:before{
+    border-bottom: 25px solid #EE3B24;
+}
+
+.hs-featured-icon:after {
+    border-top: 25px solid #EE3B24;
+}
+
+#hs-masthead {
+    border-top: 2px solid #EE3B24;
+}
+
+@media screen and (max-width: 1180px){
+    .hs-toggle-menu span {
+        background: #EE3B24;
+        box-shadow: 0 10px 0px 0px #EE3B24, 0 -10px 0px 0px #EE3B24;
+    }
+
+    .hs-main-navigation .hs-menu {
+        border-top: 2px solid #EE3B24;
+    }
+}
+
+.search-submit {
+    background: #EE3B24 !important;
+}
+
+.hs-main-navigation li:hover > a {
+    color: #EE3B24;
+}
+
+.hs-menu > ul > li > a:after {
+    border-bottom: 2px solid #EE3B24;
+}
+
+.search-field:focus {
+    border-color: #EE3B24 !important;
+}
+
+.hs-featured-icon {
+    background: #EE3B24;
+}
+
+.hs-featured-icon:before{
+    border-bottom: 25px solid #EE3B24;
+}
+
+.hs-featured-icon:after {
+    border-top: 25px solid #EE3B24;
+}
+
+.hs-service-icon {color: #EE3B24;}
+
+.hs-team-social-id a {color: #EE3B24;}
+
+.hs-team-member h6:after {background: #EE3B24;}
+
+.hs-counter-icon:before, .hs-counter-icon:after {background: #EE3B24;}
+
+.hs-counter-icon,.hs-main-navigation .current_page_item > a, .hs-main-navigation .current-menu-item > a, .hs-main-navigation .current_page_ancestor > a, .page-template-home-template .hs-main-navigation .current > a, .page-template-home-template .hs-white.fadeInDown .hs-main-navigation .current > a, .home.blog .hs-main-navigation .current > a, .home.blog .hs-white.fadeInDown .hs-main-navigation .current > a {color: #EE3B24;}
+
+.hs-testimonial-wrap .bx-wrapper img {
+    border-color: #EE3B24;
+}
+
+.hs-testimonial-wrap .bx-wrapper .bx-pager.bx-default-pager a:hover, .hs-testimonial-wrap .bx-wrapper .bx-pager.bx-default-pager a.active, .hs-blog-post:hover, .hs-social a, #hs-back-top {background: #EE3B24;}
