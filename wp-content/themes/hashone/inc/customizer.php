@@ -1473,7 +1473,7 @@ function hashone_customize_register( $wp_customize ) {
 		)
 	);
 
-	/*============TESTIMONIAL SECTION============*/
+	/*============TESTIMONIAL SECTION===========*/
 
 	$wp_customize->add_section(
 		'hashone_testimonial_sec',
