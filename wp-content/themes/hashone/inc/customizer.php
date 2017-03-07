@@ -1473,7 +1473,7 @@ function hashone_customize_register( $wp_customize ) {
 //		)
 //	);
 //	-------------------------------------------------------------------
-	for( $i = 1; $i < 31; $i++ ) {
+	for( $i = 1; $i < 11; $i++ ) {
 		$wp_customize->add_setting(
 			'hashone_client_upload_heading'.$i,
 			array(
