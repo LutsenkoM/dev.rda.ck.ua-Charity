@@ -1503,7 +1503,7 @@ function hashone_customize_register( $wp_customize ) {
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
+			new Hashone_Display_Gallery_Control(
 				$wp_customize,
 				'hashone_client_logo_image'.$i,
 				array(
