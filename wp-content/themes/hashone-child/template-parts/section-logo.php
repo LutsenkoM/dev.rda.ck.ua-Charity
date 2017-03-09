@@ -39,7 +39,7 @@ if( get_theme_mod('hashone_disable_logo_sec') != 'on' ){ ?>
 								while($query->have_posts()) : $query->the_post();
 									?>
 											<a target="_blank" href="<?php echo esc_url($hashone_client_logo_url) ?>">
-												<img alt="<?php _e('logo','hashone') ?>" src="<?php echo esc_url ($hashone_client_logo_image); ?>">
+												<img alt="<?php _e('logo','hashone') ?>" src="<?php echo $hashone_client_logo_image; ?>">
 											</a>
 									<?php
 								endwhile;
