@@ -12,9 +12,9 @@ function get_child_template_directory_uri() {
 
 //Add styles and scripts
 function load_style_scripts() {
-    wp_enqueue_script('jquery-3.1.1.min.js', get_child_template_directory_uri() . '/js/libs/jquery-3.1.1.min.js');
-    wp_enqueue_script('owl.carousel.min.js', get_child_template_directory_uri() . '/js/libs/owl.carousel.min.js');
-    wp_enqueue_script('main.js', get_child_template_directory_uri() . '/js/main.js');
+//    wp_enqueue_script('jquery-3.1.1.min.js', get_child_template_directory_uri() . '/js/libs/jquery-3.1.1.min.js');
+//    wp_enqueue_script('owl.carousel.min.js', get_child_template_directory_uri() . '/js/libs/owl.carousel.min.js');
+//    wp_enqueue_script('main.js', get_child_template_directory_uri() . '/js/main.js');
     wp_enqueue_style ('skin', get_child_template_directory_uri() . '/css/skins/darkRed.css');
 }
 
