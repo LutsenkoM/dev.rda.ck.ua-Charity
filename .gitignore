@@ -44,7 +44,7 @@ access_log
 ehthumbs.db
 *[Tt]humbs.db
 *.Trashes
-#--------------------my gitignors
+#-------------------my gitignors
 /darkRed
 /wp-mail.php
 /wp-trackback.php
