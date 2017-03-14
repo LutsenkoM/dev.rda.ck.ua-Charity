@@ -4,7 +4,7 @@
 #  Main ignored items
 #------------------------
 
-/../wp-config.php
+#/../wp-config.php
 /wp-config.php
 .maintenance
 versionpress.maintenance
