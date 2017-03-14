@@ -35,7 +35,7 @@ if( get_theme_mod('hashone_disable_logo_sec') != 'on' ){ ?>
 					<?php endif; wp_reset_postdata(); ?>
 				</div>
 			</div>
-<!--			End Slider loop--->
+<!--			End Slider loop---->
 		</div>
 	</section>
 <?php } ?>
