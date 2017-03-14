@@ -44,3 +44,27 @@ access_log
 ehthumbs.db
 *[Tt]humbs.db
 *.Trashes
+#--------------------my gitignors
+/darkRed
+/wp-mail.php
+/wp-trackback.php
+/license.txt
+/wp-cron.php
+/wp-login.php
+/index.php
+/wp-links-opml.php
+/wp-activate.php
+/wp-config-sample.php
+/wp-settings.php
+/wp-signup.php
+/.gitattributes
+/readme.html
+/wp-load.php
+/wp-config.common.php
+/wp-blog-header.php
+/wp-comments-post.php
+/xmlrpc.php
+/wp-admin/
+/wp-includes/
+/data_bases/
+/.gitattributes/
