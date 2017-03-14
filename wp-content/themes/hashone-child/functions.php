@@ -10,12 +10,46 @@ function get_child_template_directory_uri() {
     return dirname( get_bloginfo('stylesheet_url') );
 }
 
-function load_style_script() {
-//  wp_enqueue_style('skin', get_stylesheet_directory() . '/css/skins/' . get_option('sample_theme_options') . '.css');
-    wp_enqueue_style('skin', get_child_template_directory_uri() . '/css/skins/darkRed.css');
+//Add styles and scripts
+function load_style_scripts() {
+//    wp_enqueue_script('jquery-3.1.1.min.js', get_child_template_directory_uri() . '/js/libs/jquery-3.1.1.min.js');
+//    wp_enqueue_script('owl.carousel.min.js', get_child_template_directory_uri() . '/js/libs/owl.carousel.min.js');
+//    wp_enqueue_script('main.js', get_child_template_directory_uri() . '/js/main.js');
+    wp_enqueue_style ('skin', get_child_template_directory_uri() . '/css/skins/darkRed.css');
 }
-//
-add_action('wp_enqueue_scripts', 'load_style_script');
-//
-//require_once ( get_stylesheet_directory() . '/theme-options.php' );
+
+add_action('wp_enqueue_scripts', 'load_style_scripts');
+//Add styles and scripts end
+
+//Custom post type
+function post_types_init() {
+    //Partners slider
+    $partners = array(
+        'label' => 'Partners',
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'rewrite' => array('slug' => 'partners'),
+        'query_var' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'trackbacks',
+            'custom-fields',
+            'comments',
+            'revisions',
+            'thumbnail',
+            'author',
+            'page-attributes',)
+    );
+    register_post_type( 'partners', $partners );
+    //Partners slider end
+
+
+}
+add_action( 'init', 'post_types_init' );
+//Custom post type end
+
 //?>

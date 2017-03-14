@@ -27,7 +27,7 @@ if( get_theme_mod('hashone_disable_featured_sec') != 'on' ){ ?>
 
 		<div class="hs-featured-post-wrap hs-clearfix">
 			<?php 
-			for( $i = 1; $i < 6; $i++ ){
+			for( $i = 1; $i < 11; $i++ ){
 				$hashone_featured_page_id = get_theme_mod('hashone_featured_page'.$i, $hashone_page); 
 				$hashone_featured_page_icon = get_theme_mod('hashone_featured_page_icon'.$i, 'fa-bell');
 			

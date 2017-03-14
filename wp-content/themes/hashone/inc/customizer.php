@@ -517,7 +517,7 @@ function hashone_customize_register( $wp_customize ) {
 
 	//FEATURED PAGES
 
-	for( $i = 1; $i < 6; $i++ ){
+	for( $i = 1; $i < 11; $i++ ){
 
 	$wp_customize->add_setting(
 		'hashone_featured_page_header'.$i,
@@ -1434,44 +1434,111 @@ function hashone_customize_register( $wp_customize ) {
 
 	//CLIENTS LOGOS
 
-	$wp_customize->add_setting(
-		'hashone_client_upload_heading',
-		array(
-			'sanitize_callback' => 'hashone_sanitize_text'
-		)
-	);
+//	$wp_customize->add_setting(
+//		'hashone_client_upload_heading',
+//		array(
+//			'sanitize_callback' => 'hashone_sanitize_text'
+//		)
+//	);
+//
+//	$wp_customize->add_control(
+//		new Hashone_Customize_Heading(
+//			$wp_customize,
+//			'hashone_client_upload_heading',
+//		array(
+//			'settings'		=> 'hashone_client_upload_heading',
+//			'section'		=> 'hashone_logo_sec',
+//			'label'			=> __( 'Upload Clients Logos ', 'hashone' ),
+//		)
+//		)
+//	);
+//
+//	$wp_customize->add_setting(
+//		'hashone_client_logo_image',
+//		array(
+//			'default'			=> '',
+//			'sanitize_callback' => 'hashone_sanitize_text'
+//		)
+//	);
+//
+//	$wp_customize->add_control(
+//		new Hashone_Display_Gallery_Control(
+//			$wp_customize,
+//			'hashone_client_logo_image',
+//			array(
+//				'settings'		=> 'hashone_client_logo_image',
+//				'section'		=> 'hashone_logo_sec',
+//				'label'			=> __( 'Upload Clients Logos', 'hashone' ),
+//			)
+//		)
+//	);
+////	-------------------------------------------------------------------
+//	for( $i = 1; $i < 11; $i++ ) {
+//		$wp_customize->add_setting(
+//			'hashone_client_upload_heading'.$i,
+//			array(
+//				'sanitize_callback' => 'hashone_sanitize_text'
+//			)
+//		);
+//
+//		$wp_customize->add_control(
+//			new Hashone_Customize_Heading(
+//				$wp_customize,
+//				'hashone_client_upload_heading'.$i,
+//				array(
+//					'settings' => 'hashone_client_upload_heading'.$i,
+//					'section' => 'hashone_logo_sec',
+//					'label' => __('Upload Client Logo ', 'hashone').$i,
+//				)
+//			)
+//		);
+//
+//		$wp_customize->add_setting(
+//			'hashone_client_logo_image'.$i,
+//			array(
+//				'default' => '',
+//				'sanitize_callback' => 'hashone_sanitize_text'
+//
+//			)
+//		);
+//
+//		$wp_customize->add_control(
+//			new WP_Customize_Image_Control(
+//				$wp_customize,
+//				'hashone_client_logo_image'.$i,
+//				array(
+//					'settings' => 'hashone_client_logo_image'.$i,
+//					'section' => 'hashone_logo_sec',
+//					'label' => __('Upload Logo', 'hashone'),
+//				)
+//			)
+//		);
+////--------------------------my setings----------------------
+//		$wp_customize->add_setting(
+//			'hashone_client_logo_url'.$i,
+//			array(
+//				'default' => '',
+//				'transport' => 'postMessage',
+//				'sanitize_callback' => 'esc_url_raw'
+//			)
+//		);
+//
+//
+//		$wp_customize->add_control(
+////    new WP_Customize_Control(
+////       $wp_customize,
+//			'hashone_client_logo_url'.$i,
+//			array(
+//				'settings' => 'hashone_client_logo_url'.$i,
+//				'section' => 'hashone_logo_sec',
+//				'label' => __('Upload link ', 'hashone'),
+//				'type' => 'url',
+//
+//			)
+//
+//		);
+//	}
 
-	$wp_customize->add_control(
-		new Hashone_Customize_Heading(
-			$wp_customize,
-			'hashone_client_upload_heading',
-		array(
-			'settings'		=> 'hashone_client_upload_heading',
-			'section'		=> 'hashone_logo_sec',
-			'label'			=> __( 'Upload Clients Logos ', 'hashone' ),
-		)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'hashone_client_logo_image',
-		array(
-			'default'			=> '',
-			'sanitize_callback' => 'hashone_sanitize_text'
-		)
-	);
-
-	$wp_customize->add_control(
-		new Hashone_Display_Gallery_Control(
-			$wp_customize,
-			'hashone_client_logo_image',
-			array(
-				'settings'		=> 'hashone_client_logo_image',
-				'section'		=> 'hashone_logo_sec',
-				'label'			=> __( 'Upload Clients Logos', 'hashone' ),
-			)
-		)
-	);
 
 	/*============TESTIMONIAL SECTION===========*/
 

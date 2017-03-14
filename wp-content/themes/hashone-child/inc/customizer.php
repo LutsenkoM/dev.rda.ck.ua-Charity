@@ -1433,45 +1433,45 @@ function hashone_customize_register( $wp_customize ) {
 	);
 
 	//CLIENTS LOGOS
-
-	$wp_customize->add_setting(
-		'hashone_client_upload_heading',
-		array(
-			'sanitize_callback' => 'hashone_sanitize_text'
-		)
-	);
-
-	$wp_customize->add_control(
-		new Hashone_Customize_Heading(
-			$wp_customize,
-			'hashone_client_upload_heading',
-		array(
-			'settings'		=> 'hashone_client_upload_heading',
-			'section'		=> 'hashone_logo_sec',
-			'label'			=> __( 'Upload Clients Logos ', 'hashone' ),
-		)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'hashone_client_logo_image',
-		array(
-			'default'			=> '',
-			'sanitize_callback' => 'hashone_sanitize_text'
-		)
-	);
-
-	$wp_customize->add_control(
-		new Hashone_Display_Gallery_Control(
-			$wp_customize,
-			'hashone_client_logo_image',
-			array(
-				'settings'		=> 'hashone_client_logo_image',
-				'section'		=> 'hashone_logo_sec',
-				'label'			=> __( 'Upload Clients Logos', 'hashone' ),
-			)
-		)
-	);
+//
+//	$wp_customize->add_setting(
+//		'hashone_client_upload_heading',
+//		array(
+//			'sanitize_callback' => 'hashone_sanitize_text'
+//		)
+//	);
+//
+//	$wp_customize->add_control(
+//		new Hashone_Customize_Heading(
+//			$wp_customize,
+//			'hashone_client_upload_heading',
+//		array(
+//			'settings'		=> 'hashone_client_upload_heading',
+//			'section'		=> 'hashone_logo_sec',
+//			'label'			=> __( 'Upload Clients Logos ', 'hashone' ),
+//		)
+//		)
+//	);
+//
+//	$wp_customize->add_setting(
+//		'hashone_client_logo_image',
+//		array(
+//			'default'			=> '',
+//			'sanitize_callback' => 'hashone_sanitize_text'
+//		)
+//	);
+//
+//	$wp_customize->add_control(
+//		new Hashone_Display_Gallery_Control(
+//			$wp_customize,
+//			'hashone_client_logo_image',
+//			array(
+//				'settings'		=> 'hashone_client_logo_image',
+//				'section'		=> 'hashone_logo_sec',
+//				'label'			=> __( 'Upload Clients Logos', 'hashone' ),
+//			)
+//		)
+//	);
 
 	/*============TESTIMONIAL SECTION============*/
 

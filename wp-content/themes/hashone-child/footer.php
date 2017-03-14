@@ -69,6 +69,10 @@
 </div><!-- #page -->
 
 <div id="hs-back-top" class="animated hs-hide"><i class="fa fa-angle-up"></i></div>
+<!--<script-->
+<!--	src="https://code.jquery.com/jquery-3.1.1.js"-->
+<!--	integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="-->
+<!--	crossorigin="anonymous"></script>-->
 <?php wp_footer(); ?>
 
 </body>
