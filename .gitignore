@@ -22,29 +22,10 @@ versionpress.maintenance
 !/wp-content/uploads/
 !/wp-content/vpdb/
 
-
 #------------------------
-#  Log files
-#------------------------
-
-*.log
-error_log
-access_log
-
-
-#------------------------
-#  OS Files
+#  My ignored items
 #------------------------
 
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-*[Tt]humbs.db
-*.Trashes
-#-------------------my gitignors
 /darkRed
 /wp-mail.php
 /wp-trackback.php
@@ -68,3 +49,27 @@ ehthumbs.db
 /wp-includes/
 /data_bases/
 /.gitattributes/
+
+
+#------------------------
+#  Log files
+#------------------------
+
+*.log
+error_log
+access_log
+
+
+#------------------------
+#  OS Files
+#------------------------
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+*[Tt]humbs.db
+*.Trashes
+
