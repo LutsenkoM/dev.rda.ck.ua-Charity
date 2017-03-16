@@ -27,9 +27,16 @@ if( get_theme_mod('hashone_disable_team_sec') != 'on' ){ ?>
 		<?php } ?>
 
 		<div class="hs-team-member-wrap hs-clearfix">
-			<?php 
+			<?php
+			$locale = '';
+			if (get_locale() == 'en_US') { // english
+				$locale = '_en';
+			}
+			if (get_locale() == 'de_DE') { // deutch
+				$locale = '_de';
+			}
 			for( $i = 1; $i < 5; $i++ ){
-				$hashone_team_page_id = get_theme_mod('hashone_team_page'.$i, $hashone_page); 
+				$hashone_team_page_id = get_theme_mod('hashone_team_page'.$i.$locale);
 			
 				if($hashone_team_page_id){
 					$args = array( 'page_id' => $hashone_team_page_id );
@@ -52,12 +59,8 @@ if( get_theme_mod('hashone_disable_team_sec') != 'on' ){ ?>
 								<a href="<?php the_permalink(); ?>" class="hs-team-member-excerpt">
 									<div class="hs-team-member-excerpt-wrap">
 									<span>
-									<?php 
-										if(has_excerpt()){
-											echo get_the_excerpt();
-										}else{
-											echo hashone_excerpt( get_the_content() , 100 );
-										}
+									<?php
+										echo wp_trim_words( apply_filters( 'the_title', get_the_content() ) );
 									?>
 									</span>
 									</div>

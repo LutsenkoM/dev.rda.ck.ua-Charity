@@ -12,9 +12,6 @@ function get_child_template_directory_uri() {
 
 //Add styles and scripts
 function load_style_scripts() {
-//    wp_enqueue_script('jquery-3.1.1.min.js', get_child_template_directory_uri() . '/js/libs/jquery-3.1.1.min.js');
-//    wp_enqueue_script('owl.carousel.min.js', get_child_template_directory_uri() . '/js/libs/owl.carousel.min.js');
-//    wp_enqueue_script('main.js', get_child_template_directory_uri() . '/js/main.js');
     wp_enqueue_style ('skin', get_child_template_directory_uri() . '/css/skins/darkRed.css');
 }
 
@@ -51,5 +48,140 @@ function post_types_init() {
 }
 add_action( 'init', 'post_types_init' );
 //Custom post type end
+
+////Include Customizer
+//require get_child_template_directory_uri( . '/inc/customizer.php';
+
+// Code for customizer.php
+function hashone_child_customize_register( $wp_customize )
+{
+    for( $i = 1; $i < 7; $i++ ){
+
+        $wp_customize->add_setting(
+            'hashone_featured_page_header'.$i.'_en',
+            array(
+                'default'   => '',
+                'sanitize_callback' => 'hashone_sanitize_text'
+            )
+        );
+
+        $wp_customize->add_control(
+            new Hashone_Customize_Heading(
+                $wp_customize,
+                'hashone_featured_page_header'.$i.'_en',
+                array(
+                    'settings'  => 'hashone_featured_page_header'.$i.'_en',
+                    'section'  => 'hashone_featured_sec',
+                    'label'   => __( 'Featured Page ', 'hashone' ).$i.'_en'
+                )
+            )
+        );
+
+        $wp_customize->add_setting(
+            'hashone_featured_page'.$i.'_en',
+            array(
+                'default'   => '',
+                'sanitize_callback' => 'absint'
+            )
+        );
+
+        $wp_customize->add_control(
+            'hashone_featured_page'.$i.'_en',
+            array(
+                'settings'  => 'hashone_featured_page'.$i.'_en',
+                'section'  => 'hashone_featured_sec',
+                'type'   => 'dropdown-pages',
+                'label'   => __( 'Select a Page', 'hashone' )
+            )
+        );
+
+        $wp_customize->add_setting(
+            'hashone_featured_page_icon'.$i.'_en',
+            array(
+                'default'   => 'fa fa-bell',
+                'sanitize_callback' => 'hashone_sanitize_text',
+                'transport'         => 'postMessage'
+            )
+        );
+
+        $wp_customize->add_control(
+            new Hashone_Fontawesome_Icon_Chooser(
+                $wp_customize,
+                'hashone_featured_page_icon'.$i.'_en',
+                array(
+                    'settings'  => 'hashone_featured_page_icon'.$i.'_en',
+                    'section'  => 'hashone_featured_sec',
+                    'label'   => __( 'FontAwesome Icon', 'hashone' ),
+                )
+            )
+        );
+    }
+
+    for( $i = 1; $i < 7; $i++ ){
+
+        $wp_customize->add_setting(
+            'hashone_featured_page_header'.$i.'_de',
+            array(
+                'default'   => '',
+                'sanitize_callback' => 'hashone_sanitize_text'
+            )
+        );
+
+        $wp_customize->add_control(
+            new Hashone_Customize_Heading(
+                $wp_customize,
+                'hashone_featured_page_header'.$i.'_de',
+                array(
+                    'settings'  => 'hashone_featured_page_header'.$i.'_de',
+                    'section'  => 'hashone_featured_sec',
+                    'label'   => __( 'Featured Page ', 'hashone' ).$i.'_de'
+                )
+            )
+        );
+
+        $wp_customize->add_setting(
+            'hashone_featured_page'.$i.'_de',
+            array(
+                'default'   => '',
+                'sanitize_callback' => 'absint'
+            )
+        );
+
+        $wp_customize->add_control(
+            'hashone_featured_page'.$i.'_de',
+            array(
+                'settings'  => 'hashone_featured_page'.$i.'_de',
+                'section'  => 'hashone_featured_sec',
+                'type'   => 'dropdown-pages',
+                'label'   => __( 'Select a Page', 'hashone' )
+            )
+        );
+
+        $wp_customize->add_setting(
+            'hashone_featured_page_icon'.$i.'_de',
+            array(
+                'default'   => 'fa fa-bell',
+                'sanitize_callback' => 'hashone_sanitize_text',
+                'transport'         => 'postMessage'
+            )
+        );
+
+        $wp_customize->add_control(
+            new Hashone_Fontawesome_Icon_Chooser(
+                $wp_customize,
+                'hashone_featured_page_icon'.$i.'_de',
+                array(
+                    'settings'  => 'hashone_featured_page_icon'.$i.'_de',
+                    'section'  => 'hashone_featured_sec',
+                    'label'   => __( 'FontAwesome Icon', 'hashone' ),
+                )
+            )
+        );
+    }
+}
+
+add_action( 'customize_register', 'hashone_child_customize_register' );
+// Code for customizer.php end
+
 
 //?>

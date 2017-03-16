@@ -26,9 +26,16 @@ if( get_theme_mod('hashone_disable_featured_sec') != 'on' ){ ?>
 		<?php } ?>
 
 		<div class="hs-featured-post-wrap hs-clearfix">
-			<?php 
+			<?php
+			$locale = '';
+			if (get_locale() == 'en_US') { // english
+				$locale = '_en';
+			}
+			if (get_locale() == 'de_DE') { // deutch
+				$locale = '_de';
+			}
 			for( $i = 1; $i < 11; $i++ ){
-				$hashone_featured_page_id = get_theme_mod('hashone_featured_page'.$i, $hashone_page); 
+				$hashone_featured_page_id = get_theme_mod('hashone_featured_page'.$i.$locale);
 				$hashone_featured_page_icon = get_theme_mod('hashone_featured_page_icon'.$i, 'fa-bell');
 			
 			if($hashone_featured_page_id){
@@ -45,12 +52,9 @@ if( get_theme_mod('hashone_disable_featured_sec') != 'on' ){ ?>
 							<?php the_title(); ?>
 							</h3>
 							<div class="hs-featured-excerpt">
-							<?php 
-							if(has_excerpt()){
-								echo get_the_excerpt();
-							}else{
-								echo hashone_excerpt( get_the_content(), 100); 
-							}?>
+							<?php
+								echo wp_trim_words( apply_filters( 'the_title', get_the_content() ) );
+							?>
 							</div>
 						</a>
 					</div>
