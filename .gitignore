@@ -22,6 +22,32 @@ versionpress.maintenance
 !/wp-content/uploads/
 !/wp-content/vpdb/
 
+#------------------------
+#  My ignored items
+#------------------------
+
+/wp-trackback.php
+/wp-mail.php
+/data_bases/
+/license.txt
+/wp-cron.php
+/wp-login.php
+/wp-admin/
+/wp-links-opml.php
+/index.php
+/darkRed
+/wp-settings.php
+/wp-config-sample.php
+/wp-activate.php
+/wp-signup.php
+/.gitattributes
+/wp-load.php
+/readme.html
+/wp-config.common.php
+/wp-blog-header.php
+/wp-comments-post.php
+/xmlrpc.php
+/wp-includes/
 
 #------------------------
 #  Log files
@@ -44,3 +70,4 @@ access_log
 ehthumbs.db
 *[Tt]humbs.db
 *.Trashes
+
