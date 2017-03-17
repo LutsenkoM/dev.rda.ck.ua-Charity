@@ -21,7 +21,7 @@ if( get_theme_mod('hashone_disable_service_sec') != 'on' ){ ?>
 			?>
 
 			<?php if($hashone_service_title){ ?>
-			<h2 class="hs-section-title wow fadeInUp" data-wow-duration="0.5s"><?php pll_e('Вигоди від співробітництва з агенцією');?></h2>
+			<h2 class="hs-section-title wow fadeInUp" data-wow-duration="0.5s"><?php echo esc_html($hashone_service_title); ?></h2>
 			<?php } ?>
 
 			<?php if($hashone_service_sub_title){ ?>

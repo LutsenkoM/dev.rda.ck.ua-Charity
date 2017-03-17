@@ -19,7 +19,7 @@ if( get_theme_mod('hashone_disable_team_sec') != 'on' ){ ?>
 		?>
 
 		<?php if($hashone_team_title){ ?>
-		<h2 class="hs-section-title wow fadeInUp" data-wow-duration="0.5s"><?php pll_e('Наша Команда');?></h2>
+		<h2 class="hs-section-title wow fadeInUp" data-wow-duration="0.5s"><?php echo esc_html($hashone_team_title); ?></h2>
 		<?php } ?>
 
 		<?php if($hashone_team_sub_title){ ?>

@@ -18,7 +18,7 @@ if( get_theme_mod('hashone_disable_featured_sec') != 'on' ){ ?>
 		$hashone_featured_desc = get_theme_mod('hashone_featured_desc', __( 'Check out cool featured of the theme', 'hashone'));
 		?>
 		<?php if($hashone_featured_title){ ?>
-		<h2 class="hs-section-title wow fadeInUp" data-wow-duration="0.5s"><?php echo esc_html($hashone_featured_desc); ?></h2>
+		<h2 class="hs-section-title wow fadeInUp" data-wow-duration="0.5s"><?php echo esc_html($hashone_featured_title); ?></h2>
 		<?php } ?>
 
 		<?php if($hashone_featured_desc){ ?>

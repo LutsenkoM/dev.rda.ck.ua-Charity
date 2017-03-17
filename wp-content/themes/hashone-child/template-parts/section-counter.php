@@ -15,7 +15,7 @@ if( get_theme_mod('hashone_disable_counter_sec') != 'on' ){ ?>
 		?>
 
 		<?php if($hashone_counter_title){ ?>
-		<h2 class="hs-section-title wow fadeInUp" data-wow-duration="0.5s"><?php pll_e('Факти про Черкаську область');?></h2>
+		<h2 class="hs-section-title wow fadeInUp" data-wow-duration="0.5s"><?php echo esc_html($hashone_counter_title); ?></h2>
 		<?php } ?>
 
 		<?php if($hashone_counter_sub_title){ ?>
