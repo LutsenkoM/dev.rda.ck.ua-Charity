@@ -52,12 +52,8 @@ if( get_theme_mod('hashone_disable_testimonial_sec') != 'on' ){ ?>
 							<h3><?php the_title(); ?></h3>
 							<div class="hs-testimonial-excerpt">
 							<i class="fa fa-quote-left"></i>
-							<?php 
-							if(has_excerpt()){
-								echo get_the_excerpt();
-							}else{
-								echo hashone_excerpt( get_the_content(), 300 );
-							}
+							<?php
+							echo wp_trim_words( apply_filters( 'the_title', get_the_content() ) );
 							?>
 							<i class="fa fa-quote-right"></i>
 							</div>
