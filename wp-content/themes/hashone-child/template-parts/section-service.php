@@ -39,7 +39,7 @@ if( get_theme_mod('hashone_disable_service_sec') != 'on' ){ ?>
 				}
 				for( $i = 1; $i < 7; $i++ ){
 					$hashone_service_page_id = get_theme_mod('hashone_service_page'.$i.$locale);
-					$hashone_service_page_icon = get_theme_mod('hashone_service_page_icon'.$i, 'fa-globe');
+					$hashone_service_page_icon = get_theme_mod('hashone_service_page_icon'.$i.$locale, 'fa-globe');
 				
 					if($hashone_service_page_id){
 						$args = array( 'page_id' => $hashone_service_page_id );

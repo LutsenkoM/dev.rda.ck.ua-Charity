@@ -36,7 +36,7 @@ if( get_theme_mod('hashone_disable_featured_sec') != 'on' ){ ?>
 			}
 			for( $i = 1; $i < 11; $i++ ){
 				$hashone_featured_page_id = get_theme_mod('hashone_featured_page'.$i.$locale);
-				$hashone_featured_page_icon = get_theme_mod('hashone_featured_page_icon'.$i, 'fa-bell');
+				$hashone_featured_page_icon = get_theme_mod('hashone_featured_page_icon'.$i.$locale, 'fa-bell');
 			
 			if($hashone_featured_page_id){
 				$args = array( 'page_id' => $hashone_featured_page_id );

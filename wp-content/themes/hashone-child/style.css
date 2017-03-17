@@ -58,6 +58,12 @@ Version: 0.1.0
     justify-content: center;
 }
 
+.hs-team-member-wrap {
+    margin-left: -2%;
+    display: flex;
+    justify-content: center;
+}
+
 /*-----Footer styles----*/
 .hs-site-content {
 	min-height: calc(100vh - 117px);

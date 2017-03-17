@@ -44,11 +44,11 @@ if( get_theme_mod('hashone_disable_team_sec') != 'on' ){ ?>
 					if($query->have_posts()):
 						while($query->have_posts()) : $query->the_post();
 						$hashone_image = wp_get_attachment_image_src(get_post_thumbnail_id(),'hashone-team-thumb');	
-						$hashone_team_designation = get_theme_mod('hashone_team_designation'.$i, __('CEO', 'hashone'));
-						$hashone_team_facebook = get_theme_mod('hashone_team_facebook'.$i, '#');
-						$hashone_team_twitter = get_theme_mod('hashone_team_twitter'.$i, '#');
+						$hashone_team_designation = get_theme_mod('hashone_team_designation'.$i.$locale, __('CEO', 'hashone'));
+						$hashone_team_facebook = get_theme_mod('hashone_team_facebook'.$i.$locale, '#');
+						$hashone_team_twitter = get_theme_mod('hashone_team_twitter'.$i.$locale, '#');
 						$hashone_team_google_plus = get_theme_mod('hashone_team_google_plus'.$i, '#');
-						$hashone_team_linkedin = get_theme_mod('hashone_team_linkedin'.$i, '#');
+						$hashone_team_linkedin = get_theme_mod('hashone_team_linkedin'.$i.$locale, '#');
 						$hashone_wow_delay = ($i/2)-1+0.5;
 					?>
 						<div class="hs-team-member wow pulse" data-wow-duration="0.5s" data-wow-delay="<?php echo $hashone_wow_delay; ?>s">

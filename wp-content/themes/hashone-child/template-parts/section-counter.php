@@ -23,16 +23,23 @@ if( get_theme_mod('hashone_disable_counter_sec') != 'on' ){ ?>
 		<?php } ?>
 
 		<div class="hs-counter-wrap hs-clearfix">
-			<?php 
+			<?php
+			$locale = '';
+			if (get_locale() == 'en_US') { // english
+				$locale = '_en';
+			}
+			if (get_locale() == 'de_DE') { // deutch
+				$locale = '_de';
+			}
 			for( $i = 1; $i < 5; $i++ ){
-				$hashone_counter_title = get_theme_mod('hashone_counter_title'.$i, __( 'Cups of Coffee', 'hashone' )); 
-				$hashone_counter_count = get_theme_mod('hashone_counter_count'.$i, rand(600,2000));
-				$hashone_counter_icon = get_theme_mod('hashone_counter_icon'.$i, 'fa-coffee');
+				$hashone_counter_title = get_theme_mod('hashone_counter_title'.$i.$locale, __( 'Cups of Coffee', 'hashone' ));
+				$hashone_counter_count = get_theme_mod('hashone_counter_count'.$i.$locale, rand(600,2000));
+				$hashone_counter_icon = get_theme_mod('hashone_counter_icon'.$i.$locale, 'fa-coffee');
 				$hashone_wow_delay = ($i/2)-1+0.5;
 				if($hashone_counter_count){
 					?>
-					<div class="hs-counter hs-counter<?php echo $i; ?> wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="<?php echo $hashone_wow_delay; ?>s">
-						<div class="hs-counter-count odometer odometer<?php echo $i; ?>" data-count="<?php echo absint($hashone_counter_count); ?>">
+					<div class="hs-counter hs-counter<?php echo $i.$locale; ?> wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="<?php echo $hashone_wow_delay; ?>s">
+						<div class="hs-counter-count odometer odometer<?php echo $i.$locale; ?>" data-count="<?php echo absint($hashone_counter_count); ?>">
 							99
 						</div>
 
@@ -41,7 +48,7 @@ if( get_theme_mod('hashone_disable_counter_sec') != 'on' ){ ?>
 						</div>
 
 						<div class="hs-counter-title">
-							<?php echo esc_html($hashone_counter_title); ?>
+							<?php echo wp_trim_words( apply_filters( 'the_title', get_the_content() )); ?>
 						</div>
 					</div>
 					<?php
