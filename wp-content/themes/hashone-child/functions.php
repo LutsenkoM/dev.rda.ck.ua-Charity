@@ -43,14 +43,10 @@ function post_types_init() {
     );
     register_post_type( 'partners', $partners );
     //Partners slider end
-
-
 }
 add_action( 'init', 'post_types_init' );
 //Custom post type end
 
 ////Include child customizer
 require_once( trailingslashit( get_stylesheet_directory() ) . '/inc/customizer.php' );
-
-
 //?>
