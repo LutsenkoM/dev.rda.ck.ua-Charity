@@ -5,7 +5,7 @@
 @media screen and (max-width: 1180px){
     .hs-toggle-menu span {
         background: #830e00 !important;
-        box-shadow: 0 10px 0px 0px #830e00, 0 -10px 0px 0px #830e00 !important;
+        box-shadow: 0 10px 0 0 #830e00, 0 -10px 0 0 #830e00 !important;
     }
 
     .hs-main-navigation .hs-menu {
