@@ -47,6 +47,18 @@ function post_types_init() {
 add_action( 'init', 'post_types_init' );
 //Custom post type end
 
+add_filter('wp_nav_menu_items','add_search_box', 10, 2);
+function add_search_box($items, $args) {
+    ob_start();
+    get_search_form();
+    $searchform = ob_get_contents();
+    ob_end_clean();
+    $items .= '<li>' . $searchform . '</li>';
+    return $items;
+}
+
+
+
 ////Include child customizer
 require_once( trailingslashit( get_stylesheet_directory() ) . '/inc/customizer.php' );
 //?>

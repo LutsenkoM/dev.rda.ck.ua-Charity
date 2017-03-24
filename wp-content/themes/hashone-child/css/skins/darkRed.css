@@ -13,18 +13,6 @@
     }
 }
 
-.search-submit {
-    background: #830e00 !important;
-}
-
-.hs-main-navigation li:hover > a, .hs-main-navigation .current_page_item > a, .hs-main-navigation .current-menu-item > a, .hs-main-navigation .current_page_ancestor > a, .page-template-home-template .hs-main-navigation .current > a, .page-template-home-template .hs-white.fadeInDown .hs-main-navigation .current > a, .home.blog .hs-main-navigation .current > a, .home.blog .hs-white.fadeInDown .hs-main-navigation .current > a {
-    color: #830e00 !important;
-}
-
-.hs-menu > ul > li > a:after {
-    border-bottom: 2px solid #830e00 !important;
-}
-
 .search-field:focus {
     border-color: #830e00 !important;
 }

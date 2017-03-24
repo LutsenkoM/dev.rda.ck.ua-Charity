@@ -517,7 +517,7 @@ function hashone_customize_register( $wp_customize ) {
 
 	//FEATURED PAGES
 
-	for( $i = 1; $i < 11; $i++ ){
+	for( $i = 1; $i < 5; $i++ ){
 
 	$wp_customize->add_setting(
 		'hashone_featured_page_header'.$i,

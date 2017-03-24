@@ -32,7 +32,7 @@ jQuery(function($){
           $('.page-template-home-template #hs-masthead, .home.blog #hs-masthead')
           .addClass('animated fadeInDown')
           .fadeIn();
-          
+
       } else {
           $('#hs-masthead')
           .removeClass('animated fadeInDown');
@@ -68,7 +68,7 @@ jQuery(function($){
 	});
 
 	$('.hs-portfolio-image').nivoLightbox();
-	
+
 	$('body').imagesLoaded( { background: '.hs-section' }, function() {
 		$.stellar({
 			horizontalScrolling: false,
@@ -87,7 +87,7 @@ jQuery(function($){
 					})
 	wow.init();
 
-	
+
 
   $('.odometer').waypoint(function() {
    setTimeout(function() {
@@ -145,7 +145,7 @@ jQuery(function($){
   if(window.location.hash) {
       $('html, body').animate({
           scrollTop: $(window.location.hash).offset().top - 82
-      }, 1000 );        
+      }, 1000 );
   }
 
 });
