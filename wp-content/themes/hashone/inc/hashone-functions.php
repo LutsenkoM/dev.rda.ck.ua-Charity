@@ -63,7 +63,7 @@ function hashone_dynamic_styles(){
 	$hashone_contact_bg = get_theme_mod('hashone_contact_bg', get_template_directory_uri().'/images/bg.jpg');
 	$hashone_page_header_bg = get_theme_mod( 'hashone_page_header_bg', get_template_directory_uri().'/images/bg.jpg');
 
-	echo '.hs-main-header{background-image: url('. esc_url($hashone_page_header_bg) .')}';
+	echo '.hs-main-header,#hs-home-slider-section{background-image: url('. esc_url($hashone_page_header_bg) .')}';
 	echo '.hs-service-left-bg{ background-image:url(' .esc_url($hashone_service_left_bg). ');}';
 	echo '#hs-counter-section{ background-image:url(' .esc_url($hashone_counter_bg). ');}';
 	echo '#hs-contact-section{ background-image:url(' .esc_url($hashone_contact_bg). ');}';

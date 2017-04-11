@@ -42,6 +42,16 @@ jQuery(document).ready(function ($) {
 			api.setFieldsSection(); /* @since 1.6.0 */
 			api.attachListeners();
 		},
+		getSize: function(type) {
+			if ( 'undefined' === typeof type ) {
+				return _.size( api.controlInstances );
+			} else if ( 'widget' == type ) {
+				return _.size( api.controlWidgets );
+			} else if ( 'nav_menu' == type ) {
+				//return _.size( api.controlMenuItems );
+			}
+			return null;
+		},
 		setFieldsSection: function() {
 
 			var sections = {},
@@ -66,8 +76,9 @@ jQuery(document).ready(function ($) {
 					} else {
 						checked = '';
 					}
-					itemsHtml += '<li><input id="wpglobus-cb-control-'+id+'" data-control="'+id+'" class="wpglobus-customize-cb-control" type="checkbox"'+checked+' /> ' + control.title + '</li>';
-
+					itemsHtml += '<li id="'+control.fieldSettings.itemID+'">';
+					itemsHtml += '<input id="'+control.fieldSettings.cbID+'" data-control="'+id+'" class="wpglobus-customize-cb-control" type="checkbox"'+checked+' /> ' + '<span class="wpglobus-cb-control-title">'+control.title+'</span>';
+					itemsHtml += '</li>';
 				});
 				itemsHtml += '</ul>';
 
@@ -100,7 +111,10 @@ jQuery(document).ready(function ($) {
 			 */
 			$( '#accordion-section-wpglobus_fields_settings_section .customize-section-description' ).addClass( 'hidden' );
 
-			$( '.'+WPGlobusCustomizeOptions.userControlIconClass ).on( 'click', function(ev) {
+			/**
+			 * Attach an event handler for user control icon.
+			 */
+			$(document).on( 'click', '.'+WPGlobusCustomizeOptions.userControlIconClass, function(ev) {
 				var section = $(this).data( 'section' );
 				$( WPGlobusCustomizeOptions.userControlBoxSelector ).each( function( i, e ) {
 					if ( section == $(e).data( 'section' ) ) {
@@ -111,6 +125,7 @@ jQuery(document).ready(function ($) {
 				});
 				wp.customize.control( 'wpglobus_fields_settings_section' ).expand();
 			});
+			
 			/**
 			 * Toggle help.
 			 */
@@ -121,7 +136,7 @@ jQuery(document).ready(function ($) {
 		},
 		setUserControls: function( control_id, obj ) {
 			var elem = obj.controlSelector + ' ' + obj.selector;
-			var cbIcon = '<img class="'+WPGlobusCustomizeOptions.userControlIconClass+'" data-section="'+obj.section+'" style="position:absolute;right:0px;" src="'+WPGlobusCustomizeOptions.userControlIcon+'" />';
+			var cbIcon = '<img class="'+WPGlobusCustomizeOptions.userControlIconClass+'" data-section="'+obj.section+'" style="position:absolute;right:0px;cursor:pointer;" src="'+WPGlobusCustomizeOptions.userControlIcon+'" />';
 			$( cbIcon ).insertBefore( elem );
 
 			if ( ! obj.userControl.enabled ) {
@@ -387,22 +402,78 @@ jQuery(document).ready(function ($) {
 				if ( element.length != 0 ) {
 
 					api.controlInstances[obj] = {};
-					api.controlInstances[obj]['element']  = element;
-					api.controlInstances[obj]['setting']  = control.setting();
+					api.controlInstances[obj]['element']  	= element;
+					api.controlInstances[obj]['elementID']  = element.attr('id') ? '#'+element.attr('id') : undefined;					
+					api.controlInstances[obj]['setting']  	= control.setting();
 					api.controlInstances[obj]['selector'] = e;
+					/**
+					 * To get element in DOM @see parent li.customize-control of this control.
+					 * And element with 'data-customize-setting-link' attribute.
+					 */
 					api.controlInstances[obj]['controlSelector'] = control.selector;
 					api.controlInstances[obj]['type'] 	  = '';
 					api.controlInstances[obj]['section']  = control.section();
 					api.controlInstances[obj]['title']    = null;
 					api.controlInstances[obj]['userControl']  = null;
+					/**
+					 * Field Settings for Fields Settings section in WPGlobus Settings panel.
+					 * @see #accordion-section-wpglobus_fields_settings_section
+					 */
+					api.controlInstances[obj]['fieldSettings']  			  = {};
+					api.controlInstances[obj]['fieldSettings']['itemID']  	  = 'item-wpglobus-cb-control-'+WPGlobusDialogApp.convertToId(obj);
+					api.controlInstances[obj]['fieldSettings']['cbID']  	  = 'wpglobus-cb-control-'+WPGlobusDialogApp.convertToId(obj);
 
+					
+					// Let's test with Zerif Lite theme.
+					// 
+					// When we open yoursite/wp-admin/customize.php:
+					//
+					// wp.customize.control('zerif_bigtitle_redbutton_url').setting() = 
+					//	  "{:en}http://wpglobus.com/hot-news-1{:}{:de}http://wpglobus.com/de/hot-news-2{:}"
+					// WPGlobusCustomize.controlInstances['zerif_bigtitle_redbutton_url'].setting = 
+					//    "http://wpglobus.com/hot-news-1|||http://wpglobus.com/de/hot-news-2|||null|||null"
+					
+					// After first saving of changeset we have:
+					//
+					// wp.customize.control('zerif_bigtitle_redbutton_url').setting() = 
+					//	  "http://wpglobus.com/hot-news-1/"
+					// WPGlobusCustomize.controlInstances['zerif_bigtitle_redbutton_url'].setting = 
+					//    "http://wpglobus.com/hot-news-1/|||http://wpglobus.com/de/hot-news-2|||null|||null"				
+					
+					// Reload page with changeset_uuid in URL:
+					//
+					// wp.customize.control('zerif_bigtitle_redbutton_url').setting() = 
+					//	  "http://wpglobus.com/hot-news-1/|||http://wpglobus.com/de/hot-news-2|||null|||null"
+					// WPGlobusCustomize.controlInstances['zerif_bigtitle_redbutton_url'].setting = 
+					//    "http://wpglobus.com/hot-news-1/|||http://wpglobus.com/de/hot-news-2|||null|||null"								
+					
+					// So, we must set correct URL value for default language when changeset was loaded.
+					
 					$.each( WPGlobusCustomize.setLinkBy, function( i, piece ) {
 
 						if ( obj.indexOf( piece ) >= 0 ) {
 							api.controlInstances[obj]['type'] = 'link';
+								
 							if ( '' == api.controlInstances[obj]['setting'] ) {
 								/** link perhaps was set to empty value */
 								api.controlInstances[obj]['setting'] = element[0].defaultValue;
+							}
+							
+							if ( WPGlobusCustomize.changeset_uuid ) {
+								/**
+								 * @since 1.7.9
+								 */
+								var val = wp.customize.control(obj).setting();
+								if ( -1 !== val.indexOf( '|||' ) ) {
+									var value = api.getTranslations(val);
+									wp.customize.control(obj).setting( value[WPGlobusCoreData.default_language] );
+									$( 
+										WPGlobusCustomize.controlInstances[obj].controlSelector + 
+										' ' + 
+										WPGlobusCustomize.controlInstances[obj].selector 
+									).val( value[WPGlobusCoreData.default_language] );
+								}
+								
 							}
 							element.addClass( 'wpglobus-control-link' );
 						}
@@ -430,10 +501,10 @@ jQuery(document).ready(function ($) {
 						api.controlInstances[obj]['setting'] = api.convertString( element[0].defaultValue );
 					};
 
-					/* Get control title */
-					api.controlInstances[obj]['title'] = $( control.selector + ' .customize-control-title' ).text();
-
-					/* Enable/disable user control */
+					/** Get control title. */
+					api.controlInstances[obj]['title'] = control.params.label;
+					
+					/** Enable/disable user control. */
 					if ( WPGlobusCustomizeOptions.userControl !== null &&
 							typeof WPGlobusCustomizeOptions.userControl[ WPGlobusCustomizeOptions.themeName ] !== 'undefined' ) {
 
@@ -464,6 +535,14 @@ jQuery(document).ready(function ($) {
 			}
 			var r = [], tr = WPGlobusCore.getTranslations( text ),
 				i = 0, rE = true;
+			
+			if ( text == tr[WPGlobusCoreData.default_language] ) {
+				/**
+				 * Don't convert if text is in default language only.
+				 */
+				return text;
+			}			
+				
 			$.each( tr, function(l,e) {
 				if ( e == '' ) {
 					r[i] = 'null';
@@ -479,10 +558,14 @@ jQuery(document).ready(function ($) {
 			return r.join('|||');
 		},
 		getTranslations: function(text) {
+			if ( 'undefined' === typeof(text) ) {
+				return text;
+			}
+		
 			var t = {},
 				ar = text.split('|||');
 			$.each(WPGlobusCoreData.enabled_languages, function(i,l){
-				t[l] = ar[i] === 'undefined' || ar[i] === 'null' ? '' : ar[i];
+				t[l] = typeof ar[i] === 'undefined' || ar[i] === 'null' ? '' : ar[i];
 			});
 			return t;
 		},
@@ -499,16 +582,31 @@ jQuery(document).ready(function ($) {
 			}
 
 			var tr = api.getTranslations(s),
-				sR = [], i = 0;
+				sR = [], i = 0, rE = true;
+				
 			$.each( tr, function(l,t){
 				if ( l == lang ) {
-					sR[i] = newVal;
+					newVal = newVal.trim();
+					sR[i] = newVal == '' ? 'null' : newVal;
 				} else {
 					sR[i] = t == '' ? 'null' : t;
 				}
+				if ( l != WPGlobusCoreData.default_language ) {
+					if ( sR[i] != 'null' ) {
+						rE = false;
+					}
+				}				
 				i++;
 			});
-			sR = sR.join('|||');
+			if ( rE ) {
+				/**
+				 * Don't convert if sR is in default language only.
+				 */				
+				sR = sR[0];
+			} else {
+				sR = sR.join('|||');
+			}
+
 			return sR;
 		},
 		addLanguageSelector: function() {
@@ -546,6 +644,7 @@ jQuery(document).ready(function ($) {
 							return;
 						}
 					}
+				
 					if ( $e.hasClass( 'wpglobus-control-link' ) ) {
 						var t = api.getTranslations( WPGlobusCustomize.controlInstances[inst].setting );
 						$e.val( t[ WPGlobusCoreData.language ] );
@@ -679,10 +778,21 @@ jQuery(document).ready(function ($) {
 					 */
 					inst = $t.data( 'wpglobus-customize-control' );
 					if ( 'undefined' === typeof WPGlobusCustomize.controlInstances[inst] ) {
-						return;
+						/**
+						 * Now don't return from callback, we have trigger.
+						 * @since 1.7.10
+						 */
+						//return;
 					}
 				}
 
+				/** 
+				 * @since 1.7.10
+				 */
+				if ( 'undefined' !== typeof $(document).triggerHandler( 'wpglobus_customize_control_keyup', [ $t, inst ] ) ) {
+					return;
+				}				
+				
 				if ( WPGlobusCustomize.controlInstances[inst]['type'] == 'link' ) {
 
 					WPGlobusCustomize.controlInstances[inst]['setting'] = api.getString(

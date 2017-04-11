@@ -6,6 +6,7 @@
 ?>
 
 <section id="hs-home-slider-section">
+	<div class="slide-banner-overlay"></div>
 	<div id="hs-bx-slider">
 	<?php for ($i=1; $i < 4; $i++) {  
 		$hashone_slider_page_id = get_theme_mod( 'hashone_slider_page'.$i );

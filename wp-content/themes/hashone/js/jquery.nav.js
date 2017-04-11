@@ -35,7 +35,7 @@
 	// the plugin prototype
 	OnePageNav.prototype = {
 		defaults: {
-			navItems: 'a',
+			navItems: 'a[href*="#"]',
 			currentClass: 'current',
 			changeHash: false,
 			easing: 'swing',

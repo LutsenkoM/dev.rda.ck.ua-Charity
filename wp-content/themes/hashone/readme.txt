@@ -26,11 +26,20 @@ Hash One is a beautiful WordPress theme with lots of featured packed option to c
 
 
 == Changelog ==
-= 1.1.7 - Jan 11 2016 =
+= 1.1.9 - Mar 15 2017 =
+* Added option for Custom header image when there is no slider
+
+= 1.1.8 - Mar 04 2017 =
+* Portfolio Jquery bug fixed for unicode language 
+* Customizer setting Testimonial bug fixed (Problem in selecting/deselecting the pages) 
+* Contact Section - bug fixed for showing icon when text is removed
+* Blog and Category Page Title H1 header changed to H3 for better SEO
+
+= 1.1.7 - Jan 11 2017 =
 * Testimonial not showing issue fixed
 * Header animation CSS added
 
-= 1.1.6 - Jan 10 2016 =
+= 1.1.6 - Jan 10 2017 =
 * SmoothScroll JS updated
 * Testimonial background issue fixed
 * Filter added to reorder the home page section

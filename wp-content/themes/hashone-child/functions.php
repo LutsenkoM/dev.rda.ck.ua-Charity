@@ -13,6 +13,7 @@ function get_child_template_directory_uri() {
 //Add styles and scripts
 function load_style_scripts() {
     wp_enqueue_style ('skin', get_child_template_directory_uri() . '/css/skins/darkRed.css');
+
 }
 
 add_action('wp_enqueue_scripts', 'load_style_scripts');

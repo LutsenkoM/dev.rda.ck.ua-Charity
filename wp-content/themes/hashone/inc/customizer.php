@@ -1434,113 +1434,46 @@ function hashone_customize_register( $wp_customize ) {
 
 	//CLIENTS LOGOS
 
-//	$wp_customize->add_setting(
-//		'hashone_client_upload_heading',
-//		array(
-//			'sanitize_callback' => 'hashone_sanitize_text'
-//		)
-//	);
-//
-//	$wp_customize->add_control(
-//		new Hashone_Customize_Heading(
-//			$wp_customize,
-//			'hashone_client_upload_heading',
-//		array(
-//			'settings'		=> 'hashone_client_upload_heading',
-//			'section'		=> 'hashone_logo_sec',
-//			'label'			=> __( 'Upload Clients Logos ', 'hashone' ),
-//		)
-//		)
-//	);
-//
-//	$wp_customize->add_setting(
-//		'hashone_client_logo_image',
-//		array(
-//			'default'			=> '',
-//			'sanitize_callback' => 'hashone_sanitize_text'
-//		)
-//	);
-//
-//	$wp_customize->add_control(
-//		new Hashone_Display_Gallery_Control(
-//			$wp_customize,
-//			'hashone_client_logo_image',
-//			array(
-//				'settings'		=> 'hashone_client_logo_image',
-//				'section'		=> 'hashone_logo_sec',
-//				'label'			=> __( 'Upload Clients Logos', 'hashone' ),
-//			)
-//		)
-//	);
-////	-------------------------------------------------------------------
-//	for( $i = 1; $i < 11; $i++ ) {
-//		$wp_customize->add_setting(
-//			'hashone_client_upload_heading'.$i,
-//			array(
-//				'sanitize_callback' => 'hashone_sanitize_text'
-//			)
-//		);
-//
-//		$wp_customize->add_control(
-//			new Hashone_Customize_Heading(
-//				$wp_customize,
-//				'hashone_client_upload_heading'.$i,
-//				array(
-//					'settings' => 'hashone_client_upload_heading'.$i,
-//					'section' => 'hashone_logo_sec',
-//					'label' => __('Upload Client Logo ', 'hashone').$i,
-//				)
-//			)
-//		);
-//
-//		$wp_customize->add_setting(
-//			'hashone_client_logo_image'.$i,
-//			array(
-//				'default' => '',
-//				'sanitize_callback' => 'hashone_sanitize_text'
-//
-//			)
-//		);
-//
-//		$wp_customize->add_control(
-//			new WP_Customize_Image_Control(
-//				$wp_customize,
-//				'hashone_client_logo_image'.$i,
-//				array(
-//					'settings' => 'hashone_client_logo_image'.$i,
-//					'section' => 'hashone_logo_sec',
-//					'label' => __('Upload Logo', 'hashone'),
-//				)
-//			)
-//		);
-////--------------------------my setings----------------------
-//		$wp_customize->add_setting(
-//			'hashone_client_logo_url'.$i,
-//			array(
-//				'default' => '',
-//				'transport' => 'postMessage',
-//				'sanitize_callback' => 'esc_url_raw'
-//			)
-//		);
-//
-//
-//		$wp_customize->add_control(
-////    new WP_Customize_Control(
-////       $wp_customize,
-//			'hashone_client_logo_url'.$i,
-//			array(
-//				'settings' => 'hashone_client_logo_url'.$i,
-//				'section' => 'hashone_logo_sec',
-//				'label' => __('Upload link ', 'hashone'),
-//				'type' => 'url',
-//
-//			)
-//
-//		);
-//	}
+	$wp_customize->add_setting(
+		'hashone_client_upload_heading',
+		array(
+			'sanitize_callback' => 'hashone_sanitize_text'
+		)
+	);
 
+	$wp_customize->add_control(
+		new Hashone_Customize_Heading(
+			$wp_customize,
+			'hashone_client_upload_heading',
+		array(
+			'settings'		=> 'hashone_client_upload_heading',
+			'section'		=> 'hashone_logo_sec',
+			'label'			=> __( 'Upload Clients Logos ', 'hashone' ),
+		)
+		)
+	);
 
-	/*============TESTIMONIAL SECTION===========*/
+	$wp_customize->add_setting(
+		'hashone_client_logo_image',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'hashone_sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+		new Hashone_Display_Gallery_Control(
+			$wp_customize,
+			'hashone_client_logo_image',
+			array(
+				'settings'		=> 'hashone_client_logo_image',
+				'section'		=> 'hashone_logo_sec',
+				'label'			=> __( 'Upload Clients Logos', 'hashone' ),
+			)
+		)
+	);
+
+	/*============TESTIMONIAL SECTION============*/
 
 	$wp_customize->add_section(
 		'hashone_testimonial_sec',
@@ -2273,7 +2206,7 @@ function hashone_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'hashone_imp_links',
 				'section'		=> 'hashone_implink_section',
-				'description'	=> '<a class="ht-implink" href="http://demo.hashthemes.com/hashone/" target="_blank">'.__('Live Demo', 'hashone').'</a><a class="ht-implink" href="https://hashthemes.com/support/" target="_blank">'.__('Support Forum', 'hashone').'</a><a class="ht-implink" href="https://www.facebook.com/hashtheme/" target="_blank">'.__('Like Us in Facebook', 'hashone').'</a>',
+				'description'	=> '<a class="ht-implink" href="https://hashthemes.com/documentation/hashone-documentation/" target="_blank">'.__('Documentation', 'hashone').'</a><a class="ht-implink" href="http://demo.hashthemes.com/hashone/" target="_blank">'.__('Live Demo', 'hashone').'</a><a class="ht-implink" href="https://hashthemes.com/support/" target="_blank">'.__('Support Forum', 'hashone').'</a><a class="ht-implink" href="https://www.facebook.com/hashtheme/" target="_blank">'.__('Like Us in Facebook', 'hashone').'</a>',
 			)
 		)
 	);
@@ -2523,8 +2456,13 @@ class Hashone_Dropdown_Multiple_Chooser extends WP_Customize_Control{
 
                 <select data-placeholder="<?php echo esc_html( $this->placeholder ); ?>" multiple="multiple" class="hs-chosen-select" <?php $this->link(); ?>>
                     <?php
-                    foreach ( $this->choices as $value => $label )
-                        echo '<option value="' . esc_attr( $value ) . '"' . selected( $this->value(), $value, false ) . '>' . esc_html($label) . '</option>';
+                    foreach ( $this->choices as $value => $label ){
+                    	$selected = '';
+                    	if(in_array($value, $this->value())){
+                    		$selected = 'selected="selected"';
+                    	}
+                        echo '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . esc_html($label) . '</option>';
+                    }
                     ?>
                 </select>
             </label>

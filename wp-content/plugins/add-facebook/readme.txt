@@ -3,7 +3,7 @@ Contributors: smuzthemes
 Requires at least: 3.7
 Tested up to: 4.7
 Tags: Facebook, Facebook feed, Facebook gallery, facebook share, social media, Social Media Feed
-Stable tag: 1.3
+Stable tag: 1.4
 Donate Link: http://web-settler.com/wordpress-facebook-feed/
 License: Gpl V2 or latest
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

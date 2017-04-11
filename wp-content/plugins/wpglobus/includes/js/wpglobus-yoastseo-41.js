@@ -636,6 +636,15 @@ S				 */
 					/** since yoastseo 3.2 */
 
 					$( '#yoast_wpseo_focuskw_'+l ).val( focuskw );
+					
+					/**
+					 * Set data-keyword for yoast seo.
+					 * @since 1.7.9
+					 */
+					if ( ! WPGlobusYoastSeoPremium ) { 
+						$('#wpseo-metabox-tabs_'+l+' .wpseo_keyword_tab .wpseo_tablink').data('keyword', focuskw);
+					}
+					
 					/** since yoastseo 3.2 */
 					api.updateWpseoKeyword( focuskw, l );
 
@@ -650,7 +659,6 @@ S				 */
 					if ( WPGlobusYoastSeoPremium ) {
 						/**
 						 * @since 1.7.2
-						 * @todo add doc
 						 */
 						if ( l == WPGlobusCoreData.default_language ) {
 							/**
@@ -742,7 +750,15 @@ S				 */
 							$('#wpseo-meta-section-content_'+l+' .wpseo_keyword_tab').removeClass('active');
 
 							$t.parent('.wpseo_keyword_tab').addClass('active');
-
+							
+							/**
+							 * @since 1.7.9
+							 */
+							$( '#wpseo-pageanalysis_' + l ).css({'display':'block'});
+							$( '#yoast-seo-content-analysis_' + l ).css({'display':'none'});
+							$( '#wpseo_content_' + l + ' table tr' ).eq(0).css('display','');
+							$( '#wpseo_content_' + l + ' table tr' ).eq(1).css('display','');
+							
 							/**
 							 * Update keyword index.
 							 * @since 1.7.2
@@ -755,6 +771,18 @@ S				 */
 							});
 						}
 
+						/**
+						 * Correct switching Readability/Keyword tabs for extra languages in yoast seo.
+						 * @since 1.7.9
+						 */
+						if ( ! WPGlobusYoastSeoPremium && l != WPGlobusCoreData.default_language ) {
+							$( '#wpseo-pageanalysis_' + l ).css({'display':'block'});
+							$( '#yoast-seo-content-analysis_' + l ).css({'display':'none'});
+							$( '#wpseo_content_' + l + ' table tr' ).eq(0).css('display','');
+							$( '#wpseo_content_' + l + ' table tr' ).eq(1).css('display','');							
+							return;
+						}
+						
 						var keywords = api.getKeywordsOrig();
 						var keyword  = keywords[api.keywordIndex[l]]['keyword'];
 
@@ -771,8 +799,12 @@ S				 */
 
 					} else if ( tab.hasClass( 'wpglobus-wpseo_keyword_tab' ) ) {
 						/**
-						 * @todo may be for keyword tab with extra language.
+						 * @since 1.7.9
 						 */
+						$( '#wpseo-pageanalysis_' + l ).css({'display':'block'});
+						$( '#yoast-seo-content-analysis_' + l ).css({'display':'none'});
+						$( '#wpseo_content_' + l + ' table tr' ).eq(0).css('display','');
+						$( '#wpseo_content_' + l + ' table tr' ).eq(1).css('display','');						 
 					}
 
 				});
@@ -996,6 +1028,14 @@ S				 */
 				_this.focuskw.val( s );
 				_this.focuskw_hidden.val( s );
 
+				/**
+				 * Set data-keyword for yoast seo.
+				 * @since 1.7.9
+				 */
+				if ( ! WPGlobusYoastSeoPremium ) { 
+					$('#wpseo-metabox-tabs_'+lang+' .wpseo_keyword_tab .wpseo_tablink').data('keyword', s);
+				}
+				
 				_this.updateWpseoKeyword( s, lang );
 				/**
 				 * @since 1.7.2
@@ -1074,7 +1114,7 @@ S				 */
 						var tab = $('#wpseo-meta-section-content_'+WPGlobusYoastSeoPremium.dLang+' .wpseo_keyword_tab').eq(WPGlobusYoastSeo.keywordIndex[WPGlobusYoastSeoPremium.dLang]);
 						tab.addClass('active');
 						/**
-						 * We could loose keyword for default langiuage.
+						 * We could loose keyword for default language.
 						 * Let's restore it.
 						 */
 						k = $( '#yoast_wpseo_focuskw_text_input_' + WPGlobusYoastSeoPremium.dLang ).val();
@@ -1143,9 +1183,21 @@ S				 */
 					$( '#wpseo-metabox-tabs_'+l+' .wpseo_generic_tab .wpseo-score-icon' ).removeClass( 'bad ok good 100 na' );
 					$( '#wpseo-metabox-tabs_'+l+' .wpseo_generic_tab .wpseo-score-icon' ).addClass( generic_tab_score );
 				}
-				if ( keyword_tab_score != '' ) {
-					$( '#wpseo-metabox-tabs_'+l+' .wpseo_keyword_tab .wpseo-score-icon' ).removeClass( 'bad ok good 100 na' );
-					$( '#wpseo-metabox-tabs_'+l+' .wpseo_keyword_tab .wpseo-score-icon' ).addClass( keyword_tab_score );
+			
+				/**
+				 * WPGlobusYoastSeoPremium has undefined keyword_tab_score.
+				 * @todo need to check class 'wpseo_keyword_tab_original'.
+				 */
+				if ( 'undefined' !== typeof keyword_tab_score ) {
+					if ( '' != keyword_tab_score ) {
+						if ( WPGlobusYoastSeoPremium && l != WPGlobusYoastSeoPremium.dLang ) {
+							$( '#wpseo-metabox-tabs_'+l+' .wpglobus-wpseo_keyword_tab .wpseo-score-icon' ).removeClass( 'bad ok good 100 na' );
+							$( '#wpseo-metabox-tabs_'+l+' .wpglobus-wpseo_keyword_tab .wpseo-score-icon' ).addClass( keyword_tab_score );
+						} else {
+							$( '#wpseo-metabox-tabs_'+l+' .wpseo_keyword_tab .wpseo-score-icon' ).removeClass( 'bad ok good 100 na' );
+							$( '#wpseo-metabox-tabs_'+l+' .wpseo_keyword_tab .wpseo-score-icon' ).addClass( keyword_tab_score );						
+						}
+					}
 				}
 				clearInterval(iID);
 			}

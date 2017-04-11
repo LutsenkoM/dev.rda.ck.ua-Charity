@@ -1,12 +1,12 @@
-# Copyright (C) 2016 WPGlobus
+# Copyright (C) 2017 WPGlobus
 # This file is distributed under the GPL-3.0.
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: WPGlobus Multilingual\n"
 "Report-Msgid-Bugs-To: https://wpglobus.com/pg/contact-us/\n"
-"POT-Creation-Date: 2017-02-01 16:03:32+00:00\n"
-"PO-Revision-Date: 2016-09-11 16:42+0000\n"
+"POT-Creation-Date: 2017-03-28 22:04:17+00:00\n"
+"PO-Revision-Date: 2017-03-11 13:50+0000\n"
 "Last-Translator: Gregory Karpinsky <gregory@tiv.net>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/wp-"
 "translations/wpglobus-multilingual/language/pt_PT/)\n"
@@ -17,7 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
-"X-Poedit-Country: United States\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c;\n"
@@ -46,7 +45,7 @@ msgstr ""
 #: includes/admin/class-wpglobus-customize-options.php:1031
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:31
 msgid "Add-ons"
-msgstr ""
+msgstr "Add-ons"
 
 #: includes/admin/class-wpglobus-about.php:26
 msgid "Quick Start"
@@ -55,7 +54,7 @@ msgstr ""
 #: includes/admin/class-wpglobus-about.php:48
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:43
 msgid "FAQ"
-msgstr ""
+msgstr "Perguntas Mais Frequentes"
 
 #: includes/admin/class-wpglobus-about.php:59
 msgid ""
@@ -188,7 +187,7 @@ msgstr ""
 
 #: includes/admin/class-wpglobus-clean.php:606
 msgid "Support"
-msgstr ""
+msgstr "Apoio"
 
 #: includes/admin/class-wpglobus-clean.php:611
 msgid ""
@@ -993,11 +992,11 @@ msgstr ""
 
 #: updater/class-wpglobus-updater-admin.php:211
 msgid "Active"
-msgstr ""
+msgstr "Ativo"
 
 #: updater/class-wpglobus-updater-admin.php:212
 msgid "Inactive"
-msgstr ""
+msgstr "Inativo"
 
 #: updater/class-wpglobus-updater-admin.php:309
 msgid "License activated. "

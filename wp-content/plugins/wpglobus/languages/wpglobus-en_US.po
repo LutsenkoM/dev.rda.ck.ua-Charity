@@ -1,12 +1,12 @@
-# Copyright (C) 2016 WPGlobus
+# Copyright (C) 2017 WPGlobus
 # This file is distributed under the GPL-3.0.
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: WPGlobus Multilingual\n"
 "Report-Msgid-Bugs-To: https://wpglobus.com/pg/contact-us/\n"
-"POT-Creation-Date: 2017-02-01 16:03:32+00:00\n"
-"PO-Revision-Date: 2016-09-11 16:42+0000\n"
+"POT-Creation-Date: 2017-03-28 22:04:17+00:00\n"
+"PO-Revision-Date: 2017-03-11 13:48+0000\n"
 "Last-Translator: Gregory Karpinsky <gregory@tiv.net>\n"
 "Language-Team: English (United States) (http://www.transifex.com/wp-"
 "translations/wpglobus-multilingual/language/en_US/)\n"
@@ -17,7 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
-"X-Poedit-Country: United States\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c;\n"
@@ -36,7 +35,7 @@ msgstr "Guide"
 #: includes/admin/central/class-wpglobus-admin-central.php:142
 #: includes/admin/helpdesk/class-wpglobus-admin-helpdesk.php:53
 msgid "WPGlobus Help Desk"
-msgstr ""
+msgstr "WPGlobus Help Desk"
 
 #: includes/admin/central/class-wpglobus-admin-central.php:157
 #: includes/admin/class-wpglobus-about.php:36
@@ -55,12 +54,13 @@ msgstr "Quick Start"
 #: includes/admin/class-wpglobus-about.php:48
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:43
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #: includes/admin/class-wpglobus-about.php:59
 msgid ""
 "Attention: the Multibyte String PHP extension (`mbstring`) is not loaded!"
 msgstr ""
+"Attention: the Multibyte String PHP extension (`mbstring`) is not loaded!"
 
 #: includes/admin/class-wpglobus-about.php:60
 msgid ""
@@ -69,6 +69,10 @@ msgid ""
 "function incorrectly. Please contact your hosting company or systems "
 "administrator."
 msgstr ""
+"The mbstring extension is required for the full UTF-8 compatibility and "
+"better performance. Without it, some parts of WordPress and WPGlobus may "
+"function incorrectly. Please contact your hosting company or systems "
+"administrator."
 
 #: includes/admin/class-wpglobus-about.php:87
 msgid "Go to WPGlobus Settings"
@@ -116,19 +120,23 @@ msgstr "Please give us 5 stars!"
 
 #: includes/admin/class-wpglobus-about.php:133
 msgid "WPGlobus does not translate texts automatically!"
-msgstr ""
+msgstr "WPGlobus does not translate texts automatically!"
 
 #: includes/admin/class-wpglobus-about.php:136
 msgid ""
 "There are many translation companies and individual translators who can help "
 "you write and proofread the texts."
 msgstr ""
+"There are many translation companies and individual translators who can help "
+"you write and proofread the texts."
 
 #: includes/admin/class-wpglobus-about.php:137
 msgid ""
 "When you choose a translator, please look at their native language, country "
 "of residence, specialization and knowledge of WordPress."
 msgstr ""
+"When you choose a translator, please look at their native language, country "
+"of residence, specialization and knowledge of WordPress."
 
 #. translators: %s are used to insert HTML link. Keep them in place.
 #: includes/admin/class-wpglobus-about.php:143
@@ -137,10 +145,13 @@ msgid ""
 "website. This is not an endorsement, just a courtesy. Please contact them "
 "directly and let us know how did it work for you!"
 msgstr ""
+"We are planning to maintain a %s list of translators %s on the WPGlobus "
+"website. This is not an endorsement, just a courtesy. Please contact them "
+"directly and let us know how did it work for you!"
 
 #: includes/admin/class-wpglobus-about.php:154
 msgid "Important notes:"
-msgstr ""
+msgstr "Important notes:"
 
 #: includes/admin/class-wpglobus-about.php:159
 msgid ""
@@ -560,7 +571,7 @@ msgstr "Please use %1$sWPGlobus options page%2$s instead."
 #: includes/admin/class-wpglobus-dashboard-news.php:43
 #: includes/admin/class-wpglobus-dashboard-news.php:59
 msgid "WPGlobus News"
-msgstr ""
+msgstr "WPGlobus News"
 
 #: includes/admin/class-wpglobus-language-edit.php:146
 #: includes/admin/class-wpglobus-language-edit.php:151
@@ -677,58 +688,65 @@ msgstr "Installed"
 
 #: includes/admin/helpdesk/class-wpglobus-admin-helpdesk.php:54
 msgid "Help Desk"
-msgstr ""
+msgstr "Help Desk"
 
 #: includes/admin/helpdesk/class-wpglobus-admin-helpdesk.php:55
 msgid "Contact WPGlobus Support"
-msgstr ""
+msgstr "Contact WPGlobus Support"
 
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:55
 msgid "Thank you for using WPGlobus!"
-msgstr ""
+msgstr "Thank you for using WPGlobus!"
 
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:56
 msgid "Our Support Team is here to answer your questions or concerns."
-msgstr ""
+msgstr "Our Support Team is here to answer your questions or concerns."
 
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:58
 msgid ""
 "Click the blue round button at the bottom right to open the Contact Form."
 msgstr ""
+"Click the blue round button at the bottom right to open the Contact Form."
 
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:59
 msgid "Type in your name, email, subject and the detailed message."
-msgstr ""
+msgstr "Type in your name, email, subject and the detailed message."
 
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:60
 msgid ""
 "If you can make a screenshot demonstrating the problem, please attach it."
 msgstr ""
+"If you can make a screenshot demonstrating the problem, please attach it."
 
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:61
 msgid ""
 "Please note: we will receive some debug data together with your request. See "
 "the \"Technical Information\" table for the details."
 msgstr ""
+"Please note: we will receive some debug data together with your request. See "
+"the \"Technical Information\" table for the details."
 
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:63
 msgid "To help us serve you better:"
-msgstr ""
+msgstr "To help us serve you better:"
 
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:65
 msgid ""
 "Please check if the problem persists if you switch to a standard WordPress "
 "theme."
 msgstr ""
+"Please check if the problem persists if you switch to a standard WordPress "
+"theme."
 
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:66
 msgid ""
 "Try deactivating other plugins to see if any of them conflicts with WPGlobus."
 msgstr ""
+"Try deactivating other plugins to see if any of them conflicts with WPGlobus."
 
 #: includes/admin/helpdesk/wpglobus-admin-helpdesk-page.php:73
 msgid "Technical Information"
-msgstr ""
+msgstr "Technical Information"
 
 #: includes/class-wpglobus-widget.php:27
 msgid "WPGlobus widget"
@@ -896,11 +914,11 @@ msgstr "(Optional)"
 
 #: includes/options/class-wpglobus-options.php:419
 msgid "Custom JS Code"
-msgstr ""
+msgstr "Custom JS Code"
 
 #: includes/options/class-wpglobus-options.php:424
 msgid "(Paste your JS code here.)"
-msgstr ""
+msgstr "(Paste your JS code here.)"
 
 #: includes/options/class-wpglobus-options.php:436
 msgid "Languages table"
@@ -1206,4 +1224,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://wpglobus.com/"
 msgstr "https://wpglobus.com/"
-

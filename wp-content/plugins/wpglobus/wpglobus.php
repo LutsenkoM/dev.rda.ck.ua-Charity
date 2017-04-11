@@ -15,7 +15,7 @@
  * Description: A WordPress Globalization / Multilingual Plugin. Posts, pages, menus, widgets and even custom fields - in multiple languages!
  * Text Domain: wpglobus
  * Domain Path: /languages/
- * Version: 1.7.8.2
+ * Version: 1.7.10
  * Author: WPGlobus
  * Author URI: https://wpglobus.com/
  * Network: false
@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WPGLOBUS_VERSION', '1.7.8.2' );
+define( 'WPGLOBUS_VERSION', '1.7.10' );
 define( 'WPGLOBUS_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 /**
@@ -169,5 +169,13 @@ if ( WPGlobus_WP::in_wp_admin() ) :
 	 */
 	require_once dirname( __FILE__ ) . '/includes/admin/class-wpglobus-admin-menu.php';
 	WPGlobus_Admin_Menu::construct();
+
+	/**
+	 * Disable "Redux Blast"
+	 * @see ReduxFramework::__construct
+	 * (wpglobus/lib/ReduxCore/framework.php:416)
+	 * @since 1.7.9
+	 */
+	$GLOBALS['redux_notice_check'] = 1;
 
 endif;

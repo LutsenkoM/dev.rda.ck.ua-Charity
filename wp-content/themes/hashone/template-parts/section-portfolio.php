@@ -25,11 +25,11 @@ if( get_theme_mod('hashone_disable_portfolio_sec') != 'on' ){ ?>
 		$hashone_portfolio_cat_array = explode(',', $hashone_portfolio_cat);
 	?>	
 	<div class="hs-portfolio-cat-name-list hs-container wow zoomIn" data-wow-duration="0.5s" data-wow-delay="1s">
-		<?php 
-			$category_slug = ""; 
+		<?php  
 			foreach ($hashone_portfolio_cat_array as $hashone_portfolio_cat_single) {
+				$category_slug = "";
 				$category_slug = get_category($hashone_portfolio_cat_single);
-				$category_slug = $category_slug->slug;
+				$category_slug = 'hashone-portfolio-'.$category_slug->term_id;
 				?>
 				<div class="hs-portfolio-cat-name" data-filter=".<?php echo esc_attr($category_slug); ?>">
 					<?php echo esc_html(get_cat_name($hashone_portfolio_cat_single)); ?>
@@ -55,7 +55,7 @@ if( get_theme_mod('hashone_disable_portfolio_sec') != 'on' ){ ?>
 			 		$cat_slug = array();
 
 			 		foreach ($categories as $category) {
-			 			$cat_slug[] = $category->slug;
+			 			$cat_slug[] = 'hashone-portfolio-'.$category->term_id;
 			 		}
 
 			 		$category_slug = implode(" ", $cat_slug);

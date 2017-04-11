@@ -34,7 +34,7 @@ if( get_theme_mod('hashone_disable_testimonial_sec') != 'on' ){ ?>
 					$args = array(
 							'post_type' => 'page',
 							'post__in' => $hashone_testimonial_page,
-							'posts_per_page' => 6
+							'posts_per_page' => 12
 					 			);
 					$query = new WP_Query($args);
 					if($query->have_posts()):

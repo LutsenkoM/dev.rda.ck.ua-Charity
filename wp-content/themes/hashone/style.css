@@ -4,7 +4,7 @@ Theme URI: https://hashthemes.com/wordpress-theme/hashone/
 Author: HashThemes
 Author URI: https://hashthemes.com
 Description: HashOne - a powerful multipurpose WordPress Theme by HashThemes is packed with lots of features for creating a full packaged website that can be used by a business, restaurant, freelancers, photographers, bloggers, education firms, non-profit organization and creative agencies. The theme is fully responsive and mobile friendly and has lots of customization possibilities with various home page sections to showcase varieties of content. The theme can be used to set up a single page website with animated content that adds charm to the website with additional parallax effect. The theme is SEO friendly, Translation ready, Woo Commerce compatible and integrates seamlessly with almost all popular WordPress Plugins. For Demo http://demo.hashthemes.com/hashone
-Version: 1.1.7
+Version: 1.1.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: hashone
@@ -748,6 +748,7 @@ a:active {
 	font-weight: 300;
 	letter-spacing: 1px;
 	margin-bottom: 10px;
+	font-size: 30px;
 }
 
 .entry-figure + .entry-header{
@@ -1183,7 +1184,8 @@ object {
     position: relative;
 }
 
-.hs-main-header:after{
+.hs-main-header:after,
+.slide-banner-overlay{
 	content: "";
 	position: absolute;
 	left: 0;
@@ -1484,7 +1486,9 @@ object {
 ## Home Slider
 --------------------------------------------------------------*/
 #hs-home-slider-section{
-	min-height: 100px;
+	min-height: 220px;
+	background: url(images/bg.jpg) no-repeat center;
+	position: relative;
 }
 
 #hs-home-slider-section .bx-wrapper{
@@ -2725,6 +2729,10 @@ object {
 
 	.hs-slide-cap-desc{
 		font-size: 16px;
+	}
+
+	#hs-home-slider-section{
+		min-height: 0;
 	}
 
 	#hs-home-slider-section .bx-wrapper .bx-controls-direction a{

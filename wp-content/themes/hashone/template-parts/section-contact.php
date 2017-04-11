@@ -46,11 +46,25 @@ if( get_theme_mod('hashone_disable_contact_sec') != 'on' ){ ?>
 				$hashone_contact_website = get_theme_mod( 'hashone_contact_website', __( 'Website: http://hashthemes.com', 'hashone' ) );
 				?>
 				<ul>
+					<?php if(!empty($hashone_contact_detail)){ ?>
 					<li><?php echo wp_kses_post(wpautop($hashone_contact_detail)); ?></li>
+					<?php } ?>
+
+					<?php if(!empty($hashone_contact_address)){ ?>
 					<li><i class="fa fa-map-marker"></i><?php echo esc_html($hashone_contact_address); ?></li>
+					<?php } ?>
+
+					<?php if(!empty($hashone_contact_phone)){ ?>
 					<li><i class="fa fa-phone"></i><?php echo esc_html($hashone_contact_phone); ?></li>
+					<?php } ?>
+
+					<?php if(!empty($hashone_contact_email)){ ?>
 					<li><i class="fa fa-envelope"></i><?php echo esc_html($hashone_contact_email); ?></li>
+					<?php } ?>
+
+					<?php if(!empty($hashone_contact_website)){ ?>
 					<li><i class="fa fa-globe"></i><?php echo esc_html($hashone_contact_website); ?></li>
+					<?php } ?>
 				</ul>
 
 				<div class="hs-social">

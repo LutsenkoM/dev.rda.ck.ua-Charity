@@ -5,7 +5,7 @@ Plugin URI: http://web-settler.com/wordpress-facebook-feed/
 Description: Adds a responsive Instagram feed.
 Author: Web-Settler
 Author URI: http://web-settler.com/wordpress-facebook-feed/
-Version: 1.3
+Version: 1.4
 Version: GPl v2 or later
 **/
 if ( ! defined( 'ABSPATH' ) ) exit;
