@@ -45,10 +45,6 @@
 
 .hs-testimonial-wrap .bx-wrapper .bx-pager.bx-default-pager a:hover, .hs-testimonial-wrap .bx-wrapper .bx-pager.bx-default-pager a.active, .hs-blog-post:hover, .hs-social a, #hs-back-top {background: #830e00 !important;}
 
-.hs-breadcrumbs .current, .hs-breadcrumbs a:hover, .woocommerce .woocommerce-breadcrumb a:hover {
-    color: #830e00 !important;
-}
-
 h3#reply-title:after, h3.comments-title:after {
     background: #830e00 !important;
 }

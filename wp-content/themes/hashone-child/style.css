@@ -9,11 +9,9 @@ Version: 0.1.0
 */
 @import url('../hashone/style.css');
 
-
-
-/*.hs-featured-icon {*/
-    /*background: #EE3B24;*/
-/*}*/
+.hs-breadcrumbs .current, .hs-breadcrumbs a:hover, .woocommerce .woocommerce-breadcrumb a:hover {
+    color: #fff !important;
+}
 
 .menu-item-home a {
     color: #444 !important;
