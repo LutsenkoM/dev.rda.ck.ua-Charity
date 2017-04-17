@@ -9,6 +9,10 @@ Version: 0.1.0
 */
 @import url('../hashone/style.css');
 
+.hs-team-member-wrap {
+    flex-wrap: wrap;
+}
+
 .hs-breadcrumbs .current, .hs-breadcrumbs a:hover, .woocommerce .woocommerce-breadcrumb a:hover {
     color: #fff !important;
 }

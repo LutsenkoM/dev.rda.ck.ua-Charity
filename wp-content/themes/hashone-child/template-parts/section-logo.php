@@ -23,7 +23,10 @@ if( get_theme_mod('hashone_disable_logo_sec') != 'on' ){ ?>
 			<div class="wow zoomIn" data-wow-duration="0.5s" data-wow-delay="0.5s">
 				<div class="hs_client_logo_slider">
 					<?php
-					$query = new WP_Query( array('post_type' => 'partners', 'posts_per_page' => 100 ) );
+					$query = new WP_Query( array(
+						'post_type' => 'partners',
+						'posts_per_page' => 100
+					) );
 					if ($query->have_posts()):?>
 							<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 								<div>

@@ -6,14 +6,13 @@
 // * Time: 9:49
 // */
 //
-function get_child_template_directory_uri() {
+function get_child_stylesheet_uri() {
     return dirname( get_bloginfo('stylesheet_url') );
 }
 
 //Add styles and scripts
 function load_style_scripts() {
-    wp_enqueue_style ('skin', get_child_template_directory_uri() . '/css/skins/darkRed.css');
-
+    wp_enqueue_style ('skin', get_child_stylesheet_uri() . '/css/skins/darkRed.css');
 }
 
 add_action('wp_enqueue_scripts', 'load_style_scripts');
