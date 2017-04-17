@@ -13,6 +13,9 @@ function get_child_stylesheet_uri() {
 //Add styles and scripts
 function load_style_scripts() {
     wp_enqueue_style ('skin', get_child_stylesheet_uri() . '/css/skins/darkRed.css');
+
+    wp_enqueue_script('jquery', get_child_stylesheet_uri()  . '/js/lib/jquery-3.1.1.min.js');
+    wp_enqueue_script('custom.js', get_child_stylesheet_uri()  . '/js/custom.js');
 }
 
 add_action('wp_enqueue_scripts', 'load_style_scripts');

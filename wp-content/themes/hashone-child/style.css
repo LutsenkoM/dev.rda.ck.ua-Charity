@@ -67,10 +67,9 @@ Version: 0.1.0
 }
 
 /*-----Footer styles----*/
-.hs-content {
-    min-height: calc(100vh - 117px); /*Stiky footer*/
+#hs-content {
+    min-height: calc(100vh - 45px); /*Stiky footer*/
 }
-
 /*-----SEARCH FIELD-----*/
 #searchform {
     display: flex;
